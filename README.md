@@ -70,8 +70,9 @@ Key plots included:
 - 📉 Logistic Regression Coefficients
 - 🟦 ROC Curves for all models
 
-![Correlation Matrix](visuals/Correlation_Matrix_HighRes.png)
-![VIF Plot](visuals/VIF_Lollipop_HighRes_v2.png)
+![Correlation_Matrix_HighRes](https://github.com/user-attachments/assets/b5bb44c2-deda-4549-a875-917866ea8857)
+
+![VIF_Lollipop_HighRes_v2](https://github.com/user-attachments/assets/04c378fd-d4ad-474c-bc72-4ff418166966)
 
 ---
 
