@@ -1,74 +1,112 @@
-
 # 🩺 Lung Cancer Prediction Using Machine Learning
 
-This project explores the application of machine learning models to **predict lung cancer risk** using a dataset of lifestyle, clinical, and environmental variables. Conducted as a final project for the *IA650: Data Mining* course at Clarkson University, it demonstrates a full data science workflow from preprocessing to evaluation.
+This project presents a comprehensive machine learning approach to predicting lung cancer risk based on demographic, lifestyle, and clinical features. Conducted as a capstone project for the IA650 Data Mining course at Clarkson University, it integrates data preprocessing, exploratory analysis, statistical tests, and supervised learning models.
 
 ---
 
-## 📊 Project Overview
+## 📘 Project Summary
 
-- **Objective**: Predict pulmonary disease (a proxy for lung cancer) using ML models and identify key contributing factors.
-- **Dataset**: 5,000 patients, 18 features
-- **Target Variable**: `Pulmonary Disease` (binary: 0 = No, 1 = Yes)
-- **Data Source**: [Kaggle Dataset](https://www.kaggle.com/datasets/shantanugarg274/lung-cancer-prediction-dataset)
+Lung cancer is a leading cause of cancer-related mortality globally, largely due to late diagnosis. Our project leverages machine learning to build a predictive model for early detection of pulmonary disease—a proxy for lung cancer—using data from 5,000 individuals collected between 2018 and 2022.
 
----
-
-## 🧠 Key Techniques
-
-- Data Cleaning & Encoding
-- Chi-square Test for Association
-- PCA for Dimensionality Reduction
-- Variance Inflation Factor (VIF) to detect multicollinearity
-- Train-test split and 5-fold cross-validation
+We explored multiple classification algorithms to identify high-risk individuals based on features such as smoking habits, pollution exposure, immune system status, and oxygen saturation.
 
 ---
 
-## 🧪 Models Trained
+## 📊 Dataset Overview
 
-| Model               | Accuracy | F1 Score (Disease Class) | AUC |
-|--------------------|----------|---------------------------|-----|
-| Logistic Regression | 86%      | 0.83                      | 0.90 |
-| SVC (RBF Kernel)    | 86%      | 0.83                      | 0.90 |
-| Decision Tree       | 85%      | 0.88                      | 0.86 |
-| Random Forest       | 85%      | **0.88**                  | **0.87** |
+- **Source**: [Kaggle: Lung Cancer Prediction Dataset](https://www.kaggle.com/datasets/shantanugarg274/lung-cancer-prediction-dataset)
+- **Size**: 5,000 patient records
+- **Features**: 18 attributes (categorical, ordinal, and numerical)
+- **Target Variable**: `Pulmonary Disease` (Binary: 1 = Disease, 0 = No Disease)
 
-✅ **Random Forest** had the highest F1 for identifying disease, making it suitable for clinical decision support.
-
----
-
-## 📈 Feature Importance (Top 5)
-- Smoking
-- Breathing Issues
-- Pollution Exposure
+### Key Features:
+- Age, Gender
+- Smoking & Alcohol use
+- Pollution exposure
 - Stress on Immune System
-- Smoking Family History
+- Breathing issues, Throat discomfort
+- Oxygen saturation (SpO2)
 
 ---
 
-## 📂 Project Structure
+## 🔍 Methods
+
+### 📌 Data Preprocessing
+- One-hot encoding for categorical variables
+- Min-max normalization for ordinal variables
+- Chi-square tests for feature significance
+- PCA for dimensionality reduction
+- Variance Inflation Factor (VIF) for multicollinearity assessment
+
+### 📌 Feature Engineering
+- Top predictors included **Smoking**, **Pollution**, **Breathing Issue**, **Stress Immune**, and **Smoking Family History**
+- PCA retained 82% of variance in 4 components
+- VIF values < 5 for all predictors → No multicollinearity
+
+---
+
+## 🤖 Machine Learning Models
+
+| Model               | Accuracy | Disease F1 Score | AUC |
+|--------------------|----------|------------------|-----|
+| Logistic Regression | 86%      | 0.83             | 0.90 |
+| Support Vector Classifier | 86% | 0.83             | 0.90 |
+| Decision Tree       | 85%      | 0.88             | 0.86 |
+| Random Forest (Tuned) | 85%    | **0.88**         | **0.87** |
+
+- **Logistic Regression**: Interpretable model; strong precision for 'No Disease'
+- **SVC (RBF)**: High accuracy; effective for non-linear data
+- **Decision Tree**: High F1 for 'Disease'; prone to overfitting
+- **Random Forest**: Best overall F1 score and balance; tuned via GridSearchCV
+
+---
+
+## 📈 Visual Results
+
+Key plots included:
+- 📊 Correlation Matrix of Features
+- 📉 PCA Component Scree Plot
+- 🧪 VIF Lollipop Plot
+- 📉 Logistic Regression Coefficients
+- 🟦 ROC Curves for all models
+
+![Correlation Matrix](visuals/Correlation_Matrix_HighRes.png)
+![VIF Plot](visuals/VIF_Lollipop_HighRes_v2.png)
+
+---
+
+## 🧠 Insights
+
+- Smoking increases disease odds by **~30x**
+- Pollution and immune stress are significant compounding factors
+- Tree-based models (especially Random Forest) perform best at identifying disease
+- Logistic Regression remains useful for clinical interpretability
+
+---
+
+## 📂 Repository Structure
 
 ```
 lung-cancer-prediction/
-├── data/                # Raw dataset
-├── notebooks/           # Jupyter analysis notebooks (to be added)
-├── visuals/             # High-resolution figures (e.g., correlation matrix, VIF)
-├── presentation/        # Report and PowerPoint slides
-├── README.md
+├── data/                 # Dataset file (.csv)
+├── notebooks/            # (To be added) Jupyter notebooks
+├── visuals/              # High-resolution analysis visuals
+├── presentation/         # Presentation & Final Report (PDF)
+├── README.md             # Project documentation
 ```
 
 ---
 
 ## 👥 Contributors
 
-- **Beata Tatenda Moyo** – MS in Applied Data Science, Clarkson University
-- **Smallman Jimu**
+- **Beata Tatenda Moyo** — MS Applied Data Science, Clarkson University
+- **Smallman Jimu** — IA650 Project Partner
 
-**Course**: IA650 – Data Mining (Spring 2025)  
-**Instructor**: Dr. Sumona Mondal
+Supervised by: **Dr. Sumona Mondal**  
+Course: **IA650 – Data Mining (Spring 2025)**
 
 ---
 
 ## 📬 Contact
 
-For questions or collaboration, feel free to reach out via LinkedIn or GitHub.
+For questions or collaboration opportunities, connect with us via [LinkedIn](https://linkedin.com) or through this GitHub profile.
